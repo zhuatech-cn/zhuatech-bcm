@@ -70,3 +70,7 @@ SEO：BCM 系统源码、业务连续性管理、企业韧性、业务影响分�
 ## 恢复差距情景评估
 
 新增 `POST /api/bcm/insights/recovery-gap-scenario`，比较目标 RTO 与预计恢复时间，并结合演练间隔、未测试依赖、备份新鲜度和手工替代流程输出 `READY / REMEDIATE / ACTIVATE_CRISIS`，量化恢复差距并生成补救动作。
+
+## 企业级连续性演练认证
+
+新增 `POST /api/enterprise/bcm/exercise-certification`，覆盖关键流程、RTO、RPO、依赖、沟通、证据和整改，返回 `CERTIFY / REMEDIATE / BLOCKED`。详见 [演练认证说明](docs/ENTERPRISE_EXERCISE_CERTIFICATION.md)。
