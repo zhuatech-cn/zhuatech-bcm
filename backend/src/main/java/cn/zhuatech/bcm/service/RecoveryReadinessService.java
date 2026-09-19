@@ -9,8 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class RecoveryReadinessService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         int risk = (request.backupAgeHours() > request.rtoHours() ? 25 : 0)
             + Math.min(30, request.recoveryTestDaysAgo() / 5)
@@ -28,9 +34,15 @@ public class RecoveryReadinessService {
         return new Result(request.processName(), readiness, risk, level, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String processName, @Positive int rtoHours,
                           @Min(0) int backupAgeHours, @Min(0) int recoveryTestDaysAgo,
                           boolean alternateSiteReady, @Min(0) int trainedResponders) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String processName, int readinessScore, int riskScore,
                          String level, List<String> actions) {}
 }

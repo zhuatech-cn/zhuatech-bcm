@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class RecoveryGapScenarioService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         int rtoGapMinutes = request.estimatedRecoveryMinutes() - request.targetRtoMinutes();
         int riskScore = Math.min(40, Math.max(0, rtoGapMinutes) * 40 / request.targetRtoMinutes());
@@ -32,12 +38,18 @@ public class RecoveryGapScenarioService {
             decision, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String serviceCode, @Min(1) int targetRtoMinutes,
                           @Min(1) int estimatedRecoveryMinutes,
                           @Min(0) int lastExerciseDays, @Min(0) int untestedDependencies,
                           @Min(0) int backupAgeHours, boolean manualWorkaroundReady,
                           boolean tierOneService, boolean incidentActive) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String serviceCode, int rtoGapMinutes, int riskScore,
                          String decision, List<String> actions) {}
 }

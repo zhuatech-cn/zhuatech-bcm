@@ -7,9 +7,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class RecoveryGapScenarioServiceTests {
     private final RecoveryGapScenarioService service = new RecoveryGapScenarioService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void activatesCrisisWhenActiveIncidentCannotMeetRto() {
         var result = service.assess(new RecoveryGapScenarioService.Request(
@@ -20,6 +26,9 @@ class RecoveryGapScenarioServiceTests {
         assertTrue(result.riskScore() >= 60);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void recognizesRecentlyTestedReadyService() {
         var result = service.assess(new RecoveryGapScenarioService.Request(
