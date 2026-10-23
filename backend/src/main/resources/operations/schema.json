@@ -1,0 +1,81 @@
+{
+  "slug": "bcm",
+  "title": "备份副本覆盖与验证时效复核",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "copies",
+      "label": "现有副本数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "10000"
+    },
+    {
+      "key": "verifiedCopies",
+      "label": "已验证副本数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "10000"
+    },
+    {
+      "key": "requiredCopies",
+      "label": "要求副本数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "10000"
+    },
+    {
+      "key": "lastRestore",
+      "label": "最近恢复验证日",
+      "type": "DATE"
+    },
+    {
+      "key": "maxAgeDays",
+      "label": "验证周期天数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "3650"
+    }
+  ],
+  "columns": [
+    {
+      "key": "missingVerifiedCopies",
+      "label": "已验证副本缺口"
+    },
+    {
+      "key": "validationAgeDays",
+      "label": "距验证天数"
+    },
+    {
+      "key": "overdueDays",
+      "label": "超验证周期天数"
+    }
+  ],
+  "description": "核对目标副本数、已验证副本数和最近恢复演练日期，区分份数满足但长期未验证的情况；不连接备份存储。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "copies": "3",
+        "verifiedCopies": "3",
+        "requiredCopies": "3",
+        "lastRestore": "2026-10-20",
+        "maxAgeDays": "30"
+      }
+    ]
+  }
+}

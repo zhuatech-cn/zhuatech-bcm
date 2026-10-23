@@ -1,0 +1,53 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "validationAgeDays": "#3",
+      "missingVerifiedCopies": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "verifiedCopies": "2"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "maxAgeDays": "2"
+    },
+    "expected": {
+      "decision": "REVIEW",
+      "overdueDays": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "lastRestore": "2026-10-24"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "verifiedCopies": "4"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "maxAgeDays": "3"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]
